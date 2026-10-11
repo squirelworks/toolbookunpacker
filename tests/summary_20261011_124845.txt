@@ -1,0 +1,38 @@
+Test run 20261011_124845 UTC
+Source: /workspace/artifacts/Toolbook/
+OPTLOADER images: 21
+
+name                 packed   unpacked  segs  flag_cleared status
+TB80BAS.DLL          683872    1163488   199          True ok
+TB80BMP.DLL           68640     120032    27          True ok
+TB80CMP.DLL          193216     381920    47          True ok
+TB80ENU1.DLL         219872     220896     8          True ok
+TB80FLT.DLL          101152     164576    28          True ok
+TB80LNL.DLL           97792     197824    39          True ok
+TB80MM.DLL            24800      42848    22          True ok
+TB80NET.EXE           67360     119264    45          True ok
+TB80OLE.DLL           85952     114464    32          True ok
+TB80RCR.DLL           67824     126672     5          True ok
+TB80RTM.EXE          462080     772448   139          True ok
+TB80UTL.DLL           64128      88416    32          True ok
+TB80VBX.DLL           75328     129024    47          True ok
+TB80W16.DLL           76512     136480    56          True ok
+TBCBT.DLL             31616      57344    16          True ok
+TBDB3.DLL             66560     100608    72          True ok
+TBDLG.DLL             36800      90848    19          True ok
+TBDOS.DLL             15616      29664     7          True ok
+TBPDX.DLL             30880      49728     5          True ok
+TBREG.DLL             19552      33376    11          True ok
+TBWIN.DLL             40608      73856    28          True ok
+
+Not OPTLOADER (skipped):
+  TB80ACX.DLL
+  TB80ENU2.DLL
+  TB80F32L.dll
+  TB80JPG.DLL
+  TB80MAIN.EXE
+  TB80OCX.DLL
+  TB80RMT.DLL
+  TB80RUN.EXE
+  TB80W32.DLL
+  TBFILE32.DLL

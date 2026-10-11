@@ -1,0 +1,34 @@
+Specimen: TBDB3.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          66560
+  sha256:        36910cc9563209508c8f2b8b9eaa2645896a3ea68f98100b544b1853fc8e4eae
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0xb0
+  flags:         0x8b09
+  self-loading:  True
+  segments:      72
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x81c len 0xef
+
+=== Unpacked ===
+  size:          100608
+  sha256:        fabd638d3285bfc4f6baf08a4dee276f8f2eee7d668de86b5637b06fabca91e8
+  is_optloader:  False
+  delta:         +34048 bytes
+  NE offset:     0xb0
+  flags:         0x8309
+  self-loading:  False
+  segments:      72
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x81c len 0xef
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

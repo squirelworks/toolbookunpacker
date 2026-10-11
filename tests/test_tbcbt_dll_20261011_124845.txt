@@ -1,0 +1,34 @@
+Specimen: TBCBT.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          31616
+  sha256:        cbfafebaa1dae8471b5b0b092d5cf176f8bf7f125fcab6d4d68edbceba98b13f
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      16
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x34b len 0xf9
+
+=== Unpacked ===
+  size:          57344
+  sha256:        4634663a72f98e8e1965bf9aa083cdd98fc87b24d36aea621eeec63ec1177fa4
+  is_optloader:  False
+  delta:         +25728 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      16
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x34b len 0xf9
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

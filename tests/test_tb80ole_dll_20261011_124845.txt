@@ -1,0 +1,34 @@
+Specimen: TB80OLE.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          85952
+  sha256:        77570f1f11a5149554a2be0925ece1035af19c3381676d4b93e0641eb90de643
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0xb0
+  flags:         0x8b09
+  self-loading:  True
+  segments:      32
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0xc0f len 0x148
+
+=== Unpacked ===
+  size:          114464
+  sha256:        8daadffe9a0b925988c0a993964b789bafb331b4f9598aeac61773ff6fa5956c
+  is_optloader:  False
+  delta:         +28512 bytes
+  NE offset:     0xb0
+  flags:         0x8309
+  self-loading:  False
+  segments:      32
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0xc0f len 0x148
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

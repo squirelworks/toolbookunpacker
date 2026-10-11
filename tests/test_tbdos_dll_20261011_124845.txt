@@ -1,0 +1,34 @@
+Specimen: TBDOS.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          15616
+  sha256:        a3568c7931dcdee6cdba0e62842fb1baef6cc6ffc5c8ecb4f4da6d90f9bd1145
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      7
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x20a len 0xa0
+
+=== Unpacked ===
+  size:          29664
+  sha256:        88307177b5548e2ad342908212643b43311f009c4dbb6b55abbedc0ba8a6ceff
+  is_optloader:  False
+  delta:         +14048 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      7
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x20a len 0xa0
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

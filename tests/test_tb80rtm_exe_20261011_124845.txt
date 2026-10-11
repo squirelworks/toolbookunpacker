@@ -1,0 +1,34 @@
+Specimen: TB80RTM.EXE
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          462080
+  sha256:        2ae4d5532972534984a13c363361eb78f624efce7127b5d82cec86620cc76221
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0xb0
+  flags:         0x0b0a
+  self-loading:  True
+  segments:      139
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0xe3b len 0x142
+
+=== Unpacked ===
+  size:          772448
+  sha256:        7bd7c636adc3c82e60e5761beb2ba691e2396b38cbd9a5dd52d6ee7e3462af7e
+  is_optloader:  False
+  delta:         +310368 bytes
+  NE offset:     0xb0
+  flags:         0x030a
+  self-loading:  False
+  segments:      139
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0xe3b len 0x142
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

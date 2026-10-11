@@ -1,0 +1,34 @@
+Specimen: TB80BAS.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          683872
+  sha256:        ee3b2623a232bfc839e3012f092f6638bdea9497ca21f28ba8d3ad42d06e6b3c
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      199
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x240a len 0x8ac
+
+=== Unpacked ===
+  size:          1163488
+  sha256:        6b65dea3e8205d124f5838696bc51e7541b0f197766ef89f80ebac798f97c0ac
+  is_optloader:  False
+  delta:         +479616 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      199
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x240a len 0x8ac
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

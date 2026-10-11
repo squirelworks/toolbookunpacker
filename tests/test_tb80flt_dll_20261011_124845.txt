@@ -1,0 +1,34 @@
+Specimen: TB80FLT.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          101152
+  sha256:        dc5bf9b35dca69997598e88146ad12774862b80240f2cb8dc90e918559432ebf
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      28
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0xacd len 0xbd
+
+=== Unpacked ===
+  size:          164576
+  sha256:        a73119393e799a1b718b85b179ff877a521853b7caf36b7aed63c711fff383b3
+  is_optloader:  False
+  delta:         +63424 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      28
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0xacd len 0xbd
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

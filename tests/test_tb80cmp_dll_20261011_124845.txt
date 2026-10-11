@@ -1,0 +1,34 @@
+Specimen: TB80CMP.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          193216
+  sha256:        ad5cfe4a43dd625e34b36c0daf5ce9fa8b044be57a70999bef4b854d8fa79ba2
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      47
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x317 len 0x44
+
+=== Unpacked ===
+  size:          381920
+  sha256:        d6c1a7d391f5ffa63a3c928f2b5775f81388b84a727120e4c76b14a6869ea162
+  is_optloader:  False
+  delta:         +188704 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      47
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x317 len 0x44
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

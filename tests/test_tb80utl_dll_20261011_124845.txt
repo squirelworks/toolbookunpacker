@@ -1,0 +1,34 @@
+Specimen: TB80UTL.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          64128
+  sha256:        37d058c901588c92fd157ebc2919f77aa962b5e5734feefe8ee2de62c4110fac
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      32
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x276 len 0x22b
+
+=== Unpacked ===
+  size:          88416
+  sha256:        2714d74ed89aa92c20cadc74a2dd4eb2a0acafd8a4140cb72a8d0c66860bedb1
+  is_optloader:  False
+  delta:         +24288 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      32
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x276 len 0x22b
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

@@ -1,0 +1,34 @@
+Specimen: TBDLG.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          36800
+  sha256:        b98a6f9b6502d992702c4f1448fb512ffafd1fa32c5e60deebb71ec0dd7220cd
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0xb0
+  flags:         0x8b09
+  self-loading:  True
+  segments:      19
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x3e5 len 0x135
+
+=== Unpacked ===
+  size:          90848
+  sha256:        ec8d09fb9094c1f08bf355381e93246fd5564654a5f1fcb03c7ca4dbfbefc376
+  is_optloader:  False
+  delta:         +54048 bytes
+  NE offset:     0xb0
+  flags:         0x8309
+  self-loading:  False
+  segments:      19
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x3e5 len 0x135
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)

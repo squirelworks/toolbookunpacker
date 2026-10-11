@@ -1,0 +1,34 @@
+Specimen: TB80W16.DLL
+Run:      20261011_124845 UTC
+Status:   ok
+
+=== Packed ===
+  size:          76512
+  sha256:        b73c08b90dc5e913174f63d700d7cc1c076b99f27a979b1770a8bbcb42790f14
+  is_optloader:  True
+  stamp present: True
+  NE offset:     0x60
+  flags:         0x8b09
+  self-loading:  True
+  segments:      56
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x20c0 len 0x56e
+
+=== Unpacked ===
+  size:          136480
+  sha256:        d03dcdb68df0bd670e7c8b1330121f78547ad8477bc5cf92068809a7d55dfdf6
+  is_optloader:  False
+  delta:         +59968 bytes
+  NE offset:     0x60
+  flags:         0x8309
+  self-loading:  False
+  segments:      56
+  segtable off:  0x40
+  sector shift:  5
+  entry table:   off 0x20c0 len 0x56e
+
+=== Between ===
+  self-loading cleared: True
+  segment count match:  True
+  stamp survives:       yes (segment 1 keeps it; is_optloader uses the flag)
