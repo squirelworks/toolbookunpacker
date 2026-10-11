@@ -1,7 +1,7 @@
 diff --git a/Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/ne/EntryTable.java b/Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/ne/EntryTable.java
 --- a/Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/ne/EntryTable.java
 +++ b/Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/ne/EntryTable.java
-@@ -39,8 +39,12 @@ public class EntryTable {
+@@ -39,7 +39,10 @@
          reader.setPointerIndex(index);
  
          ArrayList<EntryTableBundle> list = new ArrayList<EntryTableBundle>();
@@ -13,25 +13,22 @@ diff --git a/Ghidra/Features/Base/src/main/java/ghidra/app/util/bin/format/ne/En
              EntryTableBundle etb = new EntryTableBundle(reader);
              if (etb.getCount() == 0) break;
              list.add(etb);
-         }
-         bundles = new EntryTableBundle[list.size()];
 diff --git a/Ghidra/Features/Base/src/main/java/ghidra/app/util/opinion/NeLoader.java b/Ghidra/Features/Base/src/main/java/ghidra/app/util/opinion/NeLoader.java
 --- a/Ghidra/Features/Base/src/main/java/ghidra/app/util/opinion/NeLoader.java
 +++ b/Ghidra/Features/Base/src/main/java/ghidra/app/util/opinion/NeLoader.java
-@@ -580,7 +580,12 @@ public class NeLoader extends AbstractOrdinalSupportLoader {
-                     //todo: how to handle constants...?
-                     log.appendMsg("NE - constant entry point...");
-                 }
-                 else {
--                    seg = st.getSegments()[bundle.getType() - 1].getSegmentID();
-+                    // type is a Java byte. Segment numbers 128-253 sign-extend
-+                    // and throw IndexOutOfBoundsException. Treat as unsigned.
-+                    int segmentIndex = Byte.toUnsignedInt(bundle.getType()) - 1;
-+                    if (segmentIndex < 0 || segmentIndex >= st.getSegments().length) {
-+                        log.appendMsg("Invalid segmentIndex " + segmentIndex);
-+                        continue;
-+                    }
-+                    seg = st.getSegments()[segmentIndex].getSegmentID();
-                 }
-                 int off = Short.toUnsignedInt(pt.getOffset());
-                 Address addr = space.getAddress(seg, off);
+@@ -580,7 +580,14 @@
+ 					log.appendMsg("NE - constant entry point...");
+ 				}
+ 				else {
+-					seg = st.getSegments()[bundle.getType() - 1].getSegmentID();
++					// type is a Java byte. Segment numbers 128-253 sign-extend
++					// and throw IndexOutOfBoundsException. Treat as unsigned.
++					int segmentIndex = Byte.toUnsignedInt(bundle.getType()) - 1;
++					if (segmentIndex < 0 || segmentIndex >= st.getSegments().length) {
++						log.appendMsg("Invalid segmentIndex " + segmentIndex);
++						continue;
++					}
++					seg = st.getSegments()[segmentIndex].getSegmentID();
+ 				}
+ 				int off = Short.toUnsignedInt(pt.getOffset());
+ 				Address addr = space.getAddress(seg, off);
