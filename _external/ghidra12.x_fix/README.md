@@ -53,7 +53,11 @@ cd ghidra
 # 2. Patch
 git apply /path/to/_external/ghidra12.x_fix/ne-entry-table.patch
 
-# 3. Build (uses the bundled Gradle wrapper)
+# 3. Fetch the non-Maven dependencies. This creates dependencies/flatRepo.
+#    Without it the build stops with "Unable to find the local maven repo".
+./gradlew -I gradle/support/fetchDependencies.gradle
+
+# 4. Build
 # Point at a real JDK 21 directory (the one that contains bin/java).
 # Find it with: dirname $(dirname $(readlink -f $(which javac)))
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
