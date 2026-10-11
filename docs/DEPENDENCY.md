@@ -22,3 +22,8 @@ if is_optloader(data):
 ## Ghidra path
 
 For modules that Ghidra 12.x rejects because of high entry-table segment bytes, use `patch_ne_entry.py` or the CMP-specific `ghidra_cmp.py`.
+
+
+## Credit
+
+Format understanding and the original unpacker logic come from moralrecordings' mrcrowbar and win16-debug projects.

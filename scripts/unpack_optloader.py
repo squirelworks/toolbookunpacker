@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Unpack SLR OPTLOADER (1993) Win16 NE images.
 
-The bitstream and relocation layout follow moralrecordings' optloader.py
-in win16-debug: https://github.com/moralrecordings/win16-debug
-This file is a standalone port. It does not import mrcrowbar. The 16-bit
-wrap on the match copy is the local fix for the segments that port rejected.
+Credit: The bitstream and relocation layout were reverse-engineered by
+moralrecordings in optloader.py (win16-debug) and mrcrowbar:
+  https://github.com/moralrecordings/win16-debug
+  https://github.com/moralrecordings/mrcrowbar
+This file is a standalone port of that work. It does not import mrcrowbar.
+The 16-bit wrap on the match copy is the local fix for the segments that
+the original port rejected.
 
 ToolBook 8.0 ships its 16-bit runtime as self-loading NE files. Segment 1
 is the loader (stamp "OPTLOADER - Copyright (C) 1993 SLR Systems"). The

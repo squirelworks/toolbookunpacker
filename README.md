@@ -47,9 +47,14 @@ Ghidra 12.1.x sign-extends the entry-table segment byte and will throw `Index -1
 
 The unpacked image still has a valid NE header, segment table, and relocation records.
 
-## Origin
+## Credit
 
-The bitstream and relocation layout follow the port in [moralrecordings/win16-debug](https://github.com/moralrecordings/win16-debug). This repository is a cleaned, dependency-free version used by the ToolBook reverse-engineering work (TBpipeline, Foolbook, etc.).
+This unpacker would not exist without the reverse-engineering work of **moralrecordings**:
+
+- [mrcrowbar](https://github.com/moralrecordings/mrcrowbar) — the library that first modeled Win16 NE structures and the OPTLOADER format.
+- [win16-debug](https://github.com/moralrecordings/win16-debug) — the original `optloader.py` that reverse-engineered the SLR OPTLOADER bitstream and relocation layout.
+
+The standalone script here is a cleaned, dependency-free port of that work (with the 16-bit wrap fix for ToolBook segments). All credit for the format understanding belongs to moralrecordings.
 
 ## License
 
