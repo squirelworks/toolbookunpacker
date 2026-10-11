@@ -13,6 +13,12 @@ import struct
 import sys
 from pathlib import Path
 
+# scripts/ is the unit other chats import. Make sure it is on the path
+# when this file is run as a script.
+_here = Path(__file__).resolve().parent
+if str(_here) not in sys.path:
+    sys.path.insert(0, str(_here))
+
 from unpack_optloader import is_optloader, unpack
 
 

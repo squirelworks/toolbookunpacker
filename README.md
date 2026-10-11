@@ -35,8 +35,11 @@ Segment 1 is special: it unpacks itself in place. Later segments carry their own
 | `scripts/optloader_mrcrowbar.py` | Older port that required mrcrowbar (kept for reference) |
 | `scripts/patch_ne_entry.py` | Zero the entry-table count so Ghidra 12.x stops reading past the table |
 | `scripts/ghidra_cmp.py` | Convenience wrapper for TB80CMP that also rewrites high entry segment bytes |
-| `docs/` | Notes on the format and known issues |
-| `examples/` | Sample command lines and expected outputs |
+| `docs/FORMAT.md` | Bitstream and relocation layout |
+| `docs/SPECIMENS.md` | Packed and unpacked sizes for the binaries that were run |
+| `docs/DEPENDENCY.md` | How another project imports this |
+| `plannedmilestones.md` | Work that is known and not in this version |
+| `examples/` | Sample command lines and the TB80RTM check |
 
 ## Ghidra import notes
 

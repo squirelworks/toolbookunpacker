@@ -13,4 +13,11 @@ python3 scripts/ghidra_cmp.py .
 # looks for TB80CMP.DLL and writes TB80CMP.ghidra.dll
 ```
 
-The unpacked images are ordinary NE files. The self-loading flag is cleared, so Windows will not call the OPTLOADER stub.
+The unpacked images are ordinary NE files. The self-loading flag is
+cleared, so Windows will not call the OPTLOADER stub.
+
+## Check against a known specimen
+
+TB80RTM.EXE (462080 bytes) unpacks to 772448 bytes. The NE header is at
+`0xb0`, flags are `0x030a`, and the self-loading bit is clear. Segment
+count is 139. Full table is in `docs/SPECIMENS.md`.
