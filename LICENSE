@@ -19,5 +19,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 The bitstream and relocation layout are derived from reverse engineering of
-SLR OPTLOADER and from the port in moralrecordings/win16-debug. The ToolBook
-binaries themselves are not included and remain the property of their owners.
+SLR OPTLOADER and from the original port by moralrecordings:
+
+  https://github.com/moralrecordings/win16-debug  (optloader.py)
+  https://github.com/moralrecordings/mrcrowbar
+
+The ToolBook binaries themselves are not included and remain the property of their owners.
