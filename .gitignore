@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+unpacked/
+*_unpacked.*
+*.noentry
+*.ghidra.dll
