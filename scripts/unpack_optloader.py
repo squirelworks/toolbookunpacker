@@ -280,10 +280,19 @@ def _existing_reloc_blob(data, file_off, size, flags):
 
 
 def is_optloader(data):
+    """True only for a still-packed OPTLOADER image.
+
+    The stamp in segment 1 survives unpacking. The self-loading flag
+    (NE flags bit 0x0800) is what the loader checks, and unpack clears it.
+    An already-unpacked image returns False.
+    """
     if data[:2] != b'MZ':
         return False
     ne = _u16(data, 0x3C)
     if ne + 2 > len(data) or data[ne:ne + 2] != b'NE':
+        return False
+    flags = _u16(data, ne + 0x0C)
+    if not (flags & 0x0800):
         return False
     nseg = _u16(data, ne + 0x1C)
     segoff = _u16(data, ne + 0x22)

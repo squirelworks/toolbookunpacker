@@ -19,3 +19,4 @@ First public form of the standalone OPTLOADER unpacker.
   [win16-debug](https://github.com/moralrecordings/win16-debug)
   (`optloader.py`).
 - Specimens and sizes are in `docs/SPECIMENS.md`.
+- `is_optloader` returns false once the self-loading flag is cleared, so an already-unpacked image is not treated as packed.

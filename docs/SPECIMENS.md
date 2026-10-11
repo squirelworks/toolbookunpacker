@@ -4,9 +4,9 @@ These are the ToolBook 8.0 NE images the unpacker was run against.
 The binaries are not in this repository. The numbers below are from
 local runs on 2026-10-11.
 
-`is_optloader` stays true after unpack because segment 1 keeps the
-OPTLOADER stamp. The self-loading flag in the NE header is the field
-that is cleared.
+`is_optloader` returns true only while the self-loading flag is set.
+Segment 1 keeps the OPTLOADER stamp after unpack, but the flag is
+cleared, so an already-unpacked image returns false.
 
 ## TB80RTM.EXE
 

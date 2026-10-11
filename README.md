@@ -19,7 +19,7 @@ python3 scripts/ghidra_cmp.py /path/to/tb80/
 
 ## What it does
 
-- Detects the OPTLOADER stamp in segment 1.
+- Detects the OPTLOADER stamp in segment 1 and the self-loading flag. An already-unpacked image returns false from `is_optloader`.
 - Expands the bitstream (literal bytes + length/distance matches) with the 16-bit wrap that the original mrcrowbar port lacked.
 - Rewrites OPTLOADER relocation records as ordinary 8-byte NE fixups.
 - Clears the self-loading flag (`0x0800`).
