@@ -54,7 +54,9 @@ cd ghidra
 git apply /path/to/_external/ghidra12.x_fix/ne-entry-table.patch
 
 # 3. Build (uses the bundled Gradle wrapper)
-export JAVA_HOME=/path/to/jdk-21
+# Point at a real JDK 21 directory (the one that contains bin/java).
+# Find it with: dirname $(dirname $(readlink -f $(which javac)))
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ./gradlew buildGhidra
 
 # 4. Result
@@ -62,6 +64,10 @@ ls build/dist/
 # ghidra_12.1.4_DEV_*.zip
 ```
 
+
+
+If `git apply` says the patch is corrupt, re-download it. An earlier
+copy had wrong hunk counts and spaces where the Ghidra sources use tabs.
 Unzip the zip and run `./ghidraRun`. It needs JDK 21 on the machine
 that launches it.
 
