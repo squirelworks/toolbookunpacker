@@ -34,9 +34,13 @@ python3 -c "import sys; sys.path.insert(0, 'toolbookunpacker/scripts'); import g
 
 ## Ghidra path
 
-For modules that Ghidra 12.x rejects because of high entry-table
-segment bytes, use `patch_ne_entry.py` or the CMP-specific
-`ghidra_cmp.py`.
+Prefer a Ghidra build with the NE loader patch in
+`_external/ghidra12.x_fix/`. It accepts honest images with entry
+segment bytes above 127. See `docs/GHIDRA.md`.
+
+If you cannot rebuild Ghidra, `patch_ne_entry.py` or the CMP-specific
+`ghidra_cmp.py` are optional post-steps. They are not part of
+`unpack()`.
 
 ## Credit
 

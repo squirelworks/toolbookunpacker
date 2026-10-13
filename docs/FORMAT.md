@@ -36,4 +36,7 @@ Unpacks itself. A tail of `precopy_size` bytes (read from the loader) is moved t
 
 - TB80ENU1 produces a short NE and is treated as suspect.
 - Some modules fail the RLE copy in the older unmasked port; the 16-bit wrap fixes them.
-- Entry-table segment bytes ≥ 128 cause Ghidra 12.x to throw. See `patch_ne_entry.py` and `ghidra_cmp.py`.
+- Entry-table segment bytes ≥ 128 cause stock Ghidra 12.1.x to throw.
+  The image is valid. See `docs/GHIDRA.md` and
+  `_external/ghidra12.x_fix/`. `patch_ne_entry.py` and `ghidra_cmp.py`
+  are optional post-steps, not part of `unpack()`.

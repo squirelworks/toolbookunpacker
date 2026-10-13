@@ -75,6 +75,14 @@ copy had wrong hunk counts and spaces where the Ghidra sources use tabs.
 Unzip the zip and run `./ghidraRun`. It needs JDK 21 on the machine
 that launches it.
 
+## Confirmation
+
+An honest `TB80BAS.DLL` (1,163,488 bytes, self-loading flag clear,
+entry segment bytes 132, 135, 136, 163, 164, 165, 180, 189, 192, 196)
+was imported into `ghidra_12.1.4_DEV_20261012_linux_x86_64` on
+2026-10-12. It loaded without error. Stock Ghidra 12.1.4 throws on
+the same file.
+
 ## Why a separate build
 
 The stock Ghidra 12.1.4 binary has the bug. There is no preference or

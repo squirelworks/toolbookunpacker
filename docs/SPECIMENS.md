@@ -68,5 +68,6 @@ cleared, so an already-unpacked image returns false.
 - TB80ENU1 was previously observed to write a short NE and is treated as
   suspect. It is not in the table above.
 - Entry-table segment bytes ≥ 128 are a Ghidra 12.x problem, not an
-  unpacker problem. See `scripts/patch_ne_entry.py` and
-  `scripts/ghidra_cmp.py`.
+  unpacker problem. The honest TB80BAS.DLL (entry bytes 132–196) loaded
+  without error in a patched Ghidra 12.1.4 build on 2026-10-12. See
+  `docs/GHIDRA.md`.

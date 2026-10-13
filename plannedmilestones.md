@@ -9,7 +9,9 @@ Not bugs. Work that is known and not in the current unpacker.
 - Add a one-line verification note for each new specimen in
   `docs/SPECIMENS.md` when a consumer reports a size or flag mismatch.
 - Keep the entry-table workaround (`patch_ne_entry.py`, `ghidra_cmp.py`)
-  until Ghidra's NE loader stops sign-extending the segment byte.
+  as optional post-steps for users who cannot rebuild Ghidra. The
+  preferred path is the patched loader in `_external/ghidra12.x_fix/`,
+  confirmed on 2026-10-12 against an honest TB80BAS.DLL.
 
 ## Later
 

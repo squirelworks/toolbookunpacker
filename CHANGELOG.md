@@ -20,3 +20,8 @@ First public form of the standalone OPTLOADER unpacker.
   (`optloader.py`).
 - Specimens and sizes are in `docs/SPECIMENS.md`.
 - `is_optloader` returns false once the self-loading flag is cleared, so an already-unpacked image is not treated as packed.
+- `docs/GHIDRA.md` records the two Ghidra 12.1 NE loader bugs, the
+  patch in `_external/ghidra12.x_fix/`, and the 2026-10-12 confirmation
+  that an honest TB80BAS.DLL loaded in the patched build.
+- The unpacker stays an honest NE producer. Entry-table rewrites stay
+  in the optional post-step scripts.

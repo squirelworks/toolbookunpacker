@@ -36,6 +36,7 @@ Segment 1 is special: it unpacks itself in place. Later segments carry their own
 | `scripts/patch_ne_entry.py` | Zero the entry-table count so Ghidra 12.x stops reading past the table |
 | `scripts/ghidra_cmp.py` | Convenience wrapper for TB80CMP that also rewrites high entry segment bytes |
 | `docs/FORMAT.md` | Bitstream and relocation layout |
+| `docs/GHIDRA.md` | Ghidra 12.1 NE loader bugs, the patch, and the confirmation |
 | `docs/SPECIMENS.md` | Packed and unpacked sizes for the binaries that were run |
 | `docs/DEPENDENCY.md` | How another project imports this |
 | `plannedmilestones.md` | Work that is known and not in this version |
@@ -43,12 +44,25 @@ Segment 1 is special: it unpacks itself in place. Later segments carry their own
 
 ## Ghidra import notes
 
-Ghidra 12.1.x sign-extends the entry-table segment byte and will throw `Index -122` on ToolBook DLLs that have segment numbers > 127 in the entry table. Two workarounds:
+Ghidra 12.1.x sign-extends the entry-table segment byte and ignores
+the entry-table length. It throws `IndexOutOfBoundsException` on
+ToolBook DLLs that have segment numbers > 127 in the entry table.
+The unpacked image is a valid NE. The bug is in the loader.
 
-1. Run `patch_ne_entry.py` on the unpacked DLL (zeros the first bundle count; exports are lost but segments load).
-2. Use the `ghidra_cmp.py` path for CMP, or manually rewrite entry segment bytes ≥ 128 to 1 after unpacking.
+The fix is a patched Ghidra. See `docs/GHIDRA.md` and
+`_external/ghidra12.x_fix/`. The patch was confirmed: an honest
+`TB80BAS.DLL` (entry segment bytes 132–196) loaded without error in
+the patched 12.1.4 build.
 
-The unpacked image still has a valid NE header, segment table, and relocation records.
+If you cannot rebuild Ghidra, two optional post-steps remain:
+
+1. `scripts/patch_ne_entry.py` zeros the first bundle count. Segments
+   load; exports are lost.
+2. `scripts/ghidra_cmp.py` is the CMP wrapper. It also rewrites entry
+   segment bytes ≥ 128 to 1.
+
+Neither is part of `unpack()`. The unpacker stays an honest NE
+producer.
 
 ## Credit
 
